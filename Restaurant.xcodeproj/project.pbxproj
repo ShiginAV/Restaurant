@@ -17,6 +17,10 @@
 		110126C222F0CB34001B18A1 /* PreparationTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110126C122F0CB34001B18A1 /* PreparationTime.swift */; };
 		110126C422F0CCC8001B18A1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110126C322F0CCC8001B18A1 /* Order.swift */; };
 		110126C622F0CE4E001B18A1 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110126C522F0CE4E001B18A1 /* MenuController.swift */; };
+		11053E602336335200AE6DFD /* CellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053E5F2336335200AE6DFD /* CellManager.swift */; };
+		11053E642336727C00AE6DFD /* Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053E632336727C00AE6DFD /* Reloadable.swift */; };
+		11053E672336747C00AE6DFD /* UITableView+Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11053E662336747C00AE6DFD /* UITableView+Reloadable.swift */; };
+		11139B90233A1BDF00DC4924 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11139B8F233A1BDF00DC4924 /* OrderConfirmationViewController.swift */; };
 		113C83B522EF732E001A17AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C83B422EF732E001A17AE /* AppDelegate.swift */; };
 		113C83BA22EF732E001A17AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113C83B822EF732E001A17AE /* Main.storyboard */; };
 		113C83BC22EF732F001A17AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113C83BB22EF732F001A17AE /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 		110126C122F0CB34001B18A1 /* PreparationTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTime.swift; sourceTree = "<group>"; };
 		110126C322F0CCC8001B18A1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		110126C522F0CE4E001B18A1 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		11053E5F2336335200AE6DFD /* CellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManager.swift; sourceTree = "<group>"; };
+		11053E632336727C00AE6DFD /* Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloadable.swift; sourceTree = "<group>"; };
+		11053E662336747C00AE6DFD /* UITableView+Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reloadable.swift"; sourceTree = "<group>"; };
+		11139B8F233A1BDF00DC4924 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		113C83B122EF732E001A17AE /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		113C83B422EF732E001A17AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		113C83B922EF732E001A17AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11053E622336724D00AE6DFD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11053E632336727C00AE6DFD /* Reloadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11053E652336744A00AE6DFD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11053E662336747C00AE6DFD /* UITableView+Reloadable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		113C83A822EF732E001A17AE = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				113C83C722EF7531001A17AE /* App */,
+				11053E652336744A00AE6DFD /* Extensions */,
+				11053E622336724D00AE6DFD /* Protocols */,
 				113C83C922EF7C77001A17AE /* Models */,
 				113C83CA22EF7C80001A17AE /* OtherControllers */,
 				113C83CB22EF7C89001A17AE /* ViewControllers */,
@@ -124,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				110126C522F0CE4E001B18A1 /* MenuController.swift */,
+				11053E5F2336335200AE6DFD /* CellManager.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -135,6 +162,7 @@
 				110126B522F0C0F6001B18A1 /* MenuTableViewController.swift */,
 				110126B722F0C13E001B18A1 /* MenuItemDetailViewController.swift */,
 				110126B922F0C1E4001B18A1 /* OrderTableViewController.swift */,
+				11139B8F233A1BDF00DC4924 /* OrderConfirmationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -215,8 +243,12 @@
 				110126C422F0CCC8001B18A1 /* Order.swift in Sources */,
 				110126BA22F0C1E4001B18A1 /* OrderTableViewController.swift in Sources */,
 				110126B422F0C0CF001B18A1 /* CategoryTableViewController.swift in Sources */,
+				11139B90233A1BDF00DC4924 /* OrderConfirmationViewController.swift in Sources */,
 				110126C622F0CE4E001B18A1 /* MenuController.swift in Sources */,
+				11053E672336747C00AE6DFD /* UITableView+Reloadable.swift in Sources */,
 				110126BC22F0C812001B18A1 /* MenuItem.swift in Sources */,
+				11053E642336727C00AE6DFD /* Reloadable.swift in Sources */,
+				11053E602336335200AE6DFD /* CellManager.swift in Sources */,
 				110126BE22F0C9D5001B18A1 /* MenuItems.swift in Sources */,
 				110126C222F0CB34001B18A1 /* PreparationTime.swift in Sources */,
 				110126B622F0C0F6001B18A1 /* MenuTableViewController.swift in Sources */,

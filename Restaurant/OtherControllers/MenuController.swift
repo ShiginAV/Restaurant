@@ -9,7 +9,19 @@
 import UIKit
 
 class MenuController {
+    
+    //MARK: - Properties
+    static let shared = MenuController()
+    static let orderUpdatedNotification = Notification.Name(rawValue: "MenuController.orderUpdated")
     let baseURL = URL(string: "http://server.getoutfit.ru:8090")!
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
+        }
+    }
+    
+    //MARK: - Methods
+    private init() {}
     
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
@@ -17,6 +29,10 @@ class MenuController {
         let task = URLSession.shared.dataTask(with: categoryURL) { data, response, error in
             guard let data = data else {
                 completion(nil)
+                
+//                let categories = ["Appetizers", "Salads", "Soups", "Entrees", "Desserts", "Sandwiches"]
+//                completion(categories)
+                
                 return
             }
             
